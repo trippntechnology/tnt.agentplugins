@@ -1,0 +1,28 @@
+# Operating System Files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor & IDE Directories
+.idea/
+.vs/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build & Dependency Artifacts
+bin/
+obj/
+node_modules/
+dist/
+out/
+
+# Logs & Temporary Files
+*.log
+tmp/
+temp/
