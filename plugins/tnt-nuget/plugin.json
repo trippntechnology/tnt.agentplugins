@@ -1,0 +1,5 @@
+{
+  "name": "tnt-nuget",
+  "author": "Tripp'n Technology",
+  "description": "NuGet package management and CI/CD publishing workflows, including keyless Trusted Publishing (OIDC)."
+}
