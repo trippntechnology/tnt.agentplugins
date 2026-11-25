@@ -11,7 +11,7 @@ This document establishes baseline conventions and security standards for buildi
 
 2. **Credential Management**:
    - Store the NuGet account or organization username in `NUGET_USER` (as a GitHub Organization secret or Repository secret/variable).
-   - Never use an email address for `NUGET_USER`; it must be the exact NuGet account or organization handle (e.g. `trippntechnology`).
+   - Never use an email address for `NUGET_USER`; it must be the exact NuGet account or organization handle (e.g. `ppirtnevets`).
    - Deprecate and delete legacy static `NUGET_API_KEY` repository secrets once Trusted Publishing is confirmed working.
 
 ## Workflow & Packaging Standards

@@ -47,12 +47,13 @@ When configuring a policy on [nuget.org/account/trustedpublishing](https://www.n
 
 | Field | Description | Critical Notes |
 | :--- | :--- | :--- |
-| **Policy Name** | Friendly identifier for the policy | E.g., `tnt.commons-publish`. Can be anything descriptive. |
-| **Package Owner** | The NuGet account or organization | Must match the owner of the target package. |
+| **Policy Name** | Friendly identifier for the policy | Use `<Repository>-publish` preserving the exact case of the repo (e.g., `TNT.Commons-publish`). NuGet policy names are friendly identifiers; matching repository casing provides clear visual parity. |
+| **Package Owner** | The NuGet account or organization | Defaults to your personal NuGet account owner (e.g., `ppirtnevets`) or organization. Must match the owner of target packages. |
 | **Repository Owner** | GitHub username or organization | E.g., `trippntechnology`. Case-insensitive. |
-| **Repository** | GitHub repository name | E.g., `tnt.commons`. Do not include `.git`. |
+| **Repository** | GitHub repository name | E.g., `TNT.Commons` or `tnt.commons`. Do not include `.git`. |
 | **Workflow File** | The filename of the workflow YAML | **Must be filename only** (e.g. `publish.yml`). Do NOT include `.github/workflows/`. |
 | **Environment** | GitHub Environment filter | Leave empty unless your GitHub job specifies `environment: <name>`. |
+| **Glob Patterns / Packages** | Package filter pattern | **Must be set to `*`** (asterisk) to allow all packages published by the repository. |
 
 ---
 

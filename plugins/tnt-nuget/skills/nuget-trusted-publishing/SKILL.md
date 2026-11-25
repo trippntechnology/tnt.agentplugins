@@ -67,12 +67,13 @@ Run the following checks to gather repository metadata:
    *(Alternatively, for an existing package, navigate to **Manage Packages** &rarr; select package &rarr; **Trusted Publishers**).*
 2. Click **Create** or **Add trusted publisher** and choose **GitHub Actions**.
 3. Fill in the policy details using the values determined in Step 1:
-   - **Policy Name**: `<repo>-publish` (e.g., `tnt.commons-publish`).
-   - **Package Owner**: Select your NuGet username or organization (e.g., `trippntechnology`).
+   - **Policy Name**: `<Repository>-publish` using the **same case as the repository** (e.g., `TNT.Commons-publish` or `TNT.Drawing-publish`). There is no technical requirement for lowercase; matching repository casing ensures visual parity and consistency.
+   - **Package Owner**: Select your NuGet account owner (default: `ppirtnevets`) or your designated organization from the dropdown.
    - **Repository Owner**: The GitHub organization or user (e.g., `trippntechnology`).
-   - **Repository**: The repository name (e.g., `tnt.commons`).
+   - **Repository**: The repository name matching GitHub casing (e.g., `TNT.Commons` or `tnt.commons`).
    - **Workflow File**: **Filename only** without any path (e.g., `publish.yml` &mdash; **do NOT** enter `.github/workflows/publish.yml`).
    - **Environment**: Leave blank unless your GitHub job specifically targets an Environment.
+   - **Glob Patterns / Packages**: Set to `*` to allow all packages produced by the repository.
 4. Click **Save** / **Create policy**.
 
 ---
@@ -81,16 +82,16 @@ Run the following checks to gather repository metadata:
 
 Make sure your NuGet account/organization username is accessible to the GitHub workflow:
 
-- **Via GitHub Web UI:** Go to repository or organization **Settings** &rarr; **Secrets and variables** &rarr; **Actions** &rarr; create a Secret or Variable named `NUGET_USER` with your NuGet account name (e.g. `trippntechnology`).
+- **Via GitHub Web UI:** Go to repository or organization **Settings** &rarr; **Secrets and variables** &rarr; **Actions** &rarr; create a Secret or Variable named `NUGET_USER` with your NuGet account name (e.g. `ppirtnevets`).
 - **Via GitHub CLI (Optional):**
   ```powershell
-  gh secret set NUGET_USER --body "trippntechnology"
+  gh secret set NUGET_USER --body "ppirtnevets"
   # Or as a repository variable:
-  gh variable set NUGET_USER --body "trippntechnology"
+  gh variable set NUGET_USER --body "ppirtnevets"
   ```
 
 > [!IMPORTANT]
-> `NUGET_USER` must be your NuGet username/organization handle, **not** an email address.
+> `NUGET_USER` must be your NuGet username/organization handle (e.g. `ppirtnevets`), **not** an email address.
 
 ---
 
